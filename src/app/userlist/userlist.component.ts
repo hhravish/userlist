@@ -57,7 +57,7 @@ export class UserlistComponent implements OnInit {
     this.combinedarray[i].addcls= !this.combinedarray[i].addcls;
   }
   
-  //method used to select 
+  //method used to select all clicked user objects which are to be displayed in next screen
   selectAll(){
     this.selectedArray=[];
     this.combinedarray.forEach(element => {
@@ -74,7 +74,7 @@ export class UserlistComponent implements OnInit {
     this.selected=event;
   }
 
-
+//search function used to filter the users based on  the text entered in the search field
   searchfun(user){
     //console.log(user)
     var userlist =[];

@@ -1,0 +1,39 @@
+
+                <div *ngIf='!selected' class="container">
+                        <!-- <input #search placeholder="Search ..." type ='text'  (keyup) ='searchfun(search.value)' > -->
+                        <div class="row">
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+
+                                </div></div>
+                        <div class="row">
+                                <div class="col-md-3 col-sm-12 col-lg-3"></div>
+                        <div class="col-md-6 col-sm-12 col-lg-6">
+                            <br>
+                            <h4 style="color: blue;">SELECT USERS</h4>
+                            <br>
+                                <div class="input-group">
+                                        <input type="text" #search class="form-control" (keyup) ='searchfun(search.value)' placeholder="Search">
+                                        <button class="btn btn-info" (click)='searchfun(search.value)'>
+                                            <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+                                        </button>
+                                    </div><br>
+                            <ul class="list-group" style="height: 500px;overflow-y: scroll;">
+                                    <li *ngFor="let user of combinedarray; let i=index" class="list-group-item" 
+                                    [class.list-group-item-success]='user.addcls' (click)='select(user,i)'>
+                                    <img style="border-radius:50%;width: 30px;height: 30px;"  [src]="user.avatar" />&nbsp;{{user.full_name}}</li>
+                            </ul>
+                            <div *ngIf='!selected' class="container" style="text-align: right;">
+                                    <br>
+                                    <button mat-button type="button" class="btn btn-default">Cancel</button> &nbsp;&nbsp;
+                                    <button mat-button type="button" class="btn btn-success" (click)='selectAll()'>Select</button>
+                            </div>
+                <!-- <ul *ngIf='searched' class="list-group">
+                        <li *ngFor="let user of combinedarray; let j=index" class="list-group-item" 
+                        [class.list-group-item-success]='user.addcls' (click)='select(user,j)'>
+                        <img style="border-radius:50%;width: 30px;height: 30px;"  [src]="user.avatar" />{{user.full_name}}</li>
+                </ul>-->
+                </div>
+                <div class="col-md-3 col-sm-12 col-lg-3"></div>
+                </div>
+                </div>
+                <app-userselect *ngIf='selected'[selectedData]='selectedArray' (goback)="back($event)" ></app-userselect>

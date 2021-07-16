@@ -1,0 +1,24 @@
+                    <div class="container">
+                        <div class="row">
+                                                    <div class="col-md-12 col-sm-12 col-lg-12">
+                                                    </div></div>
+                            <div class="row">
+                                    <div class="col-md-3 col-sm-12 col-lg-3"></div>
+                                    <div class="col-md-6 col-sm-12 col-lg-6">
+                                            <br>
+                                            <h4 style="color: blue;">SELECTED USERS</h4>
+                                            <br>
+
+                    <ul class="list-group" style="height: 500px;overflow-y: scroll;">
+                            <li *ngFor="let user of selectedData; let i=index" class="list-group-item" >
+                            <img style="border-radius:50%;width: 30px;height: 30px;"  [src]="user.avatar" /> &nbsp;{{user.full_name}}</li>
+                    </ul>
+                    <div class="container" style="text-align: right;">
+                            <br><br>
+                            <button type="button" class="btn btn-success" (click)='back()' >Back</button>
+                    </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-lg-3"></div>
+                    </div>
+                    </div>
+                    
